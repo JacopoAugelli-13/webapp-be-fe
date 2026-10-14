@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route, useParams, Link } from 'react-router-dom';
 
-import { Home } from './assets/home.jsx'
-import { Details } from './assets/details.jsx'
-import { Header } from './assets/header.jsx';
+import { Home } from './home.jsx'
+import { Details } from './details.jsx';
+import { Header } from './header.jsx';
 import './App.css'
 
 export const MyApi = () => {
@@ -35,13 +35,17 @@ return (
       <h1>Catalogo Film</h1>
 
       <ul>
+        <hr />
         {movies.map((movie) => (
           <li key={movie.id}>
             <Link to={`/movies/${movie.id}`}>
               <strong>{movie.title}</strong> - {movie.abstract}
             </Link>
           </li>
+            
+
         ))}
+        <hr />
       </ul>
     </div>
 

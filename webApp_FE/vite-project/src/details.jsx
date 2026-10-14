@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import './details.css';
 
 
 export const Details = () => {
@@ -24,13 +25,13 @@ export const Details = () => {
             })
             .catch((err) => {
                 console.error("Errore:", err);
-                setError("Impossibile caricare i dettagli.");
+                setError("torna indietro.");
                 setLoading(false);
             });
     }, [id]);
 
     if (loading) return <p>Caricamento dettagli in corso...</p>;
-    if (error) return <p style={{ color: 'red' }}>Impossibile caricare il film: {error}</p>;
+    if (error) return <p style={{ color: 'red' }}>Seleziona il film dalla Home, non da Qua!!! {error}</p>;
     if (!movie) return <p>Nessun film trovato.</p>;
 
     return (
@@ -38,18 +39,21 @@ export const Details = () => {
             <Link className="comeBack" to="/">&larr; Torna alla Home</Link>
 
             <h1>{movie[0]?.title}</h1>
-            <img
-                src={`http://localhost:3000/movies/image/${movie.image}`}
-                alt={movie.title}
-            />
-            <p><strong>Autore:</strong> {movie[0]?.director}</p>
+            <div className="containerDati">
+                <img
+                    src={`http://localhost:3000/image/${movie[0]?.image}`}
+                    alt={movie[0]?.title}
+                />
+                <p className="nAutore">Autore: {movie[0]?.director}</p>
 
-            <h2>Recensioni:</h2>
-            <ul>
-                {movie.map((row, index) => (
-                    <li key={index}>Voto: {row.vote}</li>
-                ))}
-            </ul>
+                <h2>Recensioni:</h2>
+                <ul>
+                    {movie.map((row, index) => (
+                        <li key={index}>Voto: {row.vote} by {row.name} : {row.text} </li>
+                    ))}
+                    <span className="vuoto">---</span>
+                </ul>
+            </div>
         </div>
     );
 };

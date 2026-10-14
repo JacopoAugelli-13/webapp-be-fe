@@ -18,7 +18,7 @@ router.get('/movies/:id', async (req, res, next) => {
     try {
         const filmRequest = parseInt(req.params.id);
         const query =
-            'SELECT movies.*, reviews.vote FROM movies LEFT JOIN reviews ON movies.id = reviews.movie_id WHERE movies.id = ?';
+            'SELECT movies.*, reviews.*, reviews.name FROM movies LEFT JOIN reviews ON movies.id = reviews.movie_id WHERE movies.id = ?';
        
         const [result] = await connector.query(query, [filmRequest]);
         res.status(200).json({

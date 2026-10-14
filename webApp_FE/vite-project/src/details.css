@@ -1,0 +1,164 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.NavBar {
+    list-style: none;
+    padding: 25px 15px;
+    border-bottom: 2px solid #ccc;
+    background-color: navy;
+}
+
+.container {
+    padding: 10px;
+    background-image: url('../src/assets/movie-background-collage.jpg');
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.containerDati {
+    max-width: 800px;
+    padding-block: 20px;
+    padding-inline: 20px;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+
+}
+
+img {
+    display: flex;
+    background-color: #f1f1f1;
+    padding-bottom: 20px;
+    max-width: 18rem;
+    width: 17rem;
+    height: 26rem;
+}
+
+.nAutore {
+    font-size: 2rem;
+    padding: 1rem 0.125rem 1rem 1rem;
+    border: 1px solid #000;
+    border-radius: 10px 10px 0 0;
+    background-color: navy;
+    color: #fff;
+}
+
+h2 {
+    padding: 10px;
+    border-inline: 1px solid;
+}
+
+li {
+    padding-block: 8px;
+    padding-inline: 16px;
+    list-style: none;
+    border-inline: 1px solid;
+}
+
+.vuoto {
+    display: flex;
+    color: #fff;
+    border-inline: 1px solid #000;
+    border-radius: 0 0 10px 10px;
+    border-bottom: 1px solid #000;
+
+}
+
+a {
+    padding: 10px;
+    color: #ffffff;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 5px;
+  font-weight: 500;
+}
+
+a::after{
+    content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: turquoise;
+  transition: width 0.3s ease-in-out;
+}
+
+
+a:hover::after {
+    width: 100%;
+}
+
+
+.container>ul {
+    flex-wrap: wrap;
+    list-style: none;
+    /* Rimuove i pallini */
+    padding: 0;
+    margin: 0 auto;
+    max-width: 700px;
+    display: flex;
+    gap: 15px;
+
+}
+
+.container>ul>li {
+    border: 1px solid navy;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.container>ul>li:hover {
+    opacity: 70%;
+}
+
+.NavLink {
+    display: block;
+    padding: 12px 24px;
+    background-color: #1e1e2f;
+    color: #ffffff;
+    text-decoration: none;
+    /* Toglie la sottolineatura */
+    font-weight: bold;
+    border-radius: 8px;
+    border: 1px solid #33334d;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+
+}
+
+.container>ul>li>a {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.comeBack {
+    padding-inline: 5px;
+    color: #5ba7af;
+    text-decoration: none;
+    border: 2px solid #5ba7af;
+    background-color: #fff;
+
+}
+
+h1 {
+    padding: 20px 0;
+    display: flex;
+    font-size: 3rem;
+    font-family: serif;
+    justify-content: center;
+    color: #fff;
+}
+
+hr {
+    min-width: 80%;
+    max-height: 2px;
+}
+
+strong {
+    color: turquoise;
+}
